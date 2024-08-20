@@ -115,14 +115,15 @@ void searchContact(AddressBook *addressBook)
 
 void editContact(AddressBook *addressBook)
 {
-    char name_t[50],phone_t[50],email_t[50];
+    char edit[50],name_t[50],phone_t[50],email_t[50];
     printf("Enter the name/phone/email of the contact to edit: ");
     clearInputBuffer(); 
-    fgets(name_t, sizeof(name_t), stdin);
-    name_t[strcspn(name_t, "\n")] = '\0';  
+    fgets(edit, sizeof(edit), stdin);
+    edit[strcspn(edit, "\n")] = '\0';  
     for (int i = 0; i < addressBook->contactCount; i++) 
     {
-        if (strcmp(addressBook->contacts[i].name, name_t) == 0) 
+        if (strcmp(addressBook->contacts[i].name, edit) == 0 || strcmp(addressBook->contacts[i].phone,edit) == 0
+            || strcmp(addressBook->contacts[i].email,edit) == 0)
         {
             int choice;
             printf("Contact Found: %s, %s, %s\n", 
