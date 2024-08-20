@@ -116,7 +116,7 @@ void searchContact(AddressBook *addressBook)
 void editContact(AddressBook *addressBook)
 {
     char name_t[50],phone_t[50],email_t[50];
-    printf("Enter the name of the contact to edit: ");
+    printf("Enter the name/phone/email of the contact to edit: ");
     clearInputBuffer(); 
     fgets(name_t, sizeof(name_t), stdin);
     name_t[strcspn(name_t, "\n")] = '\0';  
